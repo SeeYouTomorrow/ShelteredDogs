@@ -1,0 +1,28 @@
+<div class="content">
+        <form ng-submit="addAnimal()">
+            <input type="text" placeholder="Name" ng-model="newAnimal.name">
+            <input type="text" placeholder="Breed" ng-model="newAnimal.breed">
+            <input type="number" placeholder="Age in months" ng-model="newAnimal.age">
+            <input type="text" placeholder="Location" ng-model="newAnimal.location">
+
+            <input ng-disabled="!newAnimal.name || !newAnimal.breed || !newAnimal.age" type="submit" value="Add new dog" />
+        </form>
+        <hr>
+        <button ng-click="saveMyList()" >POST</button>
+        <hr>
+        <br/>
+        <button ng-click="order = 'age'">Youngest first</button>
+        <button ng-click="order = '-age'">Oldest first</button>
+        <button ng-click="order = 'breed'">Order by breed</button>
+        <button ng-click="order = 'name'">Order by name</button>
+
+        <input type="text" ng-model="search.breed" placeholder="Search by breed"/>
+        <input type="text" ng-model="search.location" placeholder="Search by location"/>
+
+        <ul>
+            <li ng-repeat="animal in animals | orderBy: order | filter: search">
+                <b>{{animal.name}}</b> &nbsp; &nbsp; {{animal.breed}} &nbsp; &nbsp; {{animal.age}} months old &nbsp; &nbsp; {{animal.location}}
+                <div ng-click="removeAnimal(animal)" class="remove">x</div>
+            </li>
+        </ul>
+</div>
