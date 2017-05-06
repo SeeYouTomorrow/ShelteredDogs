@@ -1,4 +1,4 @@
-animalsApp.controller('AnimalsController', ['$scope', 'getLocalStorage', function ($scope, getLocalStorage) {
+animalsApp.controller('AnimalsController', ['$scope', '$http', 'getLocalStorage', function ($scope, $http, getLocalStorage) {
     //Read the animals List from LocalStorage
     $scope.animals = getLocalStorage.getAnimals();
 
@@ -35,4 +35,18 @@ animalsApp.controller('AnimalsController', ['$scope', 'getLocalStorage', functio
         getLocalStorage.updateAnimals($scope.animals);
         $scope.count = $scope.animals.length;
     };
+
+    $scope.postMyList = function() {
+        var myJsonData = angular.toJson($scope.animals);
+        // console.log(myJsonData);
+        $http({
+            method: 'POST',
+            url: '/someUrl',
+            data: myJsonData
+        }).then(function successCallback() {
+            alert('your data was sent');
+        }, function errorCallback() {
+            alert('error while sending data');
+        });
+    }
 }]);
