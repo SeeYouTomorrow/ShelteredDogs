@@ -1,0 +1,120 @@
+body{
+  font-family: Helvetica;
+  margin: 0;
+}
+
+h1{
+  margin: 0;
+}
+
+h5{
+    color:rgb(100, 100, 100);
+    margin-left:10px;
+}
+
+hr {
+    border-color:dodgerblue;
+    opacity:0.5;
+}
+
+#menu-bar{
+  background: dodgerblue;
+  color: #fff;
+  padding: 10px;
+}
+
+#menu-bar h1{
+  font-size: 24px;
+  font-weight: normal;
+  display: inline-block;
+}
+
+#menu-bar ul{
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 6px 0;
+}
+
+#menu-bar li{
+  float: right;
+  margin-left: 20px;
+}
+
+#menu-bar a{
+  color: #fff
+}
+
+main{
+  background: #eee;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
+.content{
+  padding: 20px;
+}
+
+.content button,
+.content input[type="submit"]{
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #777;
+  border: 0;
+  box-shadow: 2px 2px 2px rgba(20,20,20,0.1);
+  font-size: 16px;
+  margin-bottom:10px;
+}
+
+.content ul{
+  padding: 0;
+  list-style-type: none;
+  margin: 30px 0;
+}
+
+.content li{
+  padding: 15px 0;
+  border-top: 1px solid #e2e2e2;
+  color: #444;
+}
+
+.content li span{
+  float: right;
+}
+
+.content input{
+  width: 90%;
+  padding: 10px 5%;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  margin: 10px 0;
+}
+
+/*add new dog button..*/
+.content input[type="submit"]:last-child{
+  width: 150px;
+  display: block;
+  margin: 15px auto;
+}
+
+.content input[type="submit"]:last-child:disabled{
+    background-color: darkgrey;
+}
+
+
+.remove{
+  float: right;
+  padding: 5px;
+  background: #fff;
+  width: 18px;
+  text-align: center;
+  border-radius: 20px;
+  color: crimson;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: -5px;
+
+}
